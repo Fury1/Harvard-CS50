@@ -1,0 +1,65 @@
+Automotive Toolbox documentation.txt
+
+Chris Guarino
+
+CS50 Final Project 2015
+
+    For my CS50 final project I decided to make a automotive toolbox of sorts that consists of three specialty
+calculations that I personally use on a regular basis. I have built a number of custom cars for a variety of 
+applications, in all cases, there is a large amount of planning and math needed to make sure that things will work
+the way they are intended to for a purpose built build. In this instance, I have created three calculators that utilize 
+formulas to compensate for tire size changes, final drive (rear-axle) ratio changes, and to check engine rpm at a desired
+top speed. They have all been implemented into a single web page. I hosted the webpage locally on the cs50 appliance 
+via vhosts just like pset7 and pset8. Start by heading to "final-project/" in the appliance via chrome.
+
+    The first of the three calculators is the "Rear Gear Ratio Correction". This formula is used to find the new gear ratio
+needed to keep a vehicles final drive ratio to OEM specs. Normally, when a vehicle's tires are altered to perhaps a larger
+diameter size (typically for say a lifted off-road truck) there is in inherent side effect. By adding larger diameter tires
+you have changed the final drive ratio because the new larger tires now do not have to spin as many times as they did
+before to cover the same amount of distance. This in turn lowers the amount of engine torque being put to the ground
+causing poor acceleration, adds to a vehicles top speed (which can be dangerous under certain circumstances), and more 
+problematically causes your speedometer to be off because it now has an invalid wheel speed input going into its own mph
+computer algorithm that further compounds the difference the faster you go. (There are also more complex problems that can
+show their face under certain circumstances as well IE: ABS and Traction Control failures) One way to correct this is to 
+compensate your rear gear axle ratio for your newfound larger wheels.
+
+    So with that said, here's how the "Rear Gear Ratio Correction" works. You simply input your original tire diameter size 
+(OEM Tire Size), then input your new tire diameter size (NEW Tire Size); lastly input your original rear gear axle ratio
+(OEM Gear Ratio). (If by chance you are wondering why there are only select values, it is because those are the only
+ratios rear gears are made in.) Once all fields have been filled, click submit. Once submit is clicked the proper gearing 
+needed for your application will be presented to you! The value is the gearing that most closely matches the available
+gear sets for purchase in the automotive market.
+
+    Next, is the "MPH Program Correction". This is a formula used to show how far your speedometer will be off at various speeds
+if the tire diameter is changed on a vehicle and the axle ratio has not been compensated for as previously mentioned.
+This information is useful because if for some reason re-gearing a vehicle's axle is not desired/wanted you can take the change
+in the speedometer and hardcode the difference into the vehicles engine controller to ensure that it is indeed getting the correct
+compensated input for wheel speed. Simply input your original tire diameter size (OEM Tire Size), then input your new tire 
+diameter size (NEW Tire Size), lastly input the speed to be checked. Click submit, once submit is click your actual speed will be 
+revealed. For reprogramming a vehicle's engine controller compare your tire sizes and a speed of 1 mph. Your actual speed will now be
+some float of 1 (IE 1.04566 mph). The difference of the two is the value that needs to be compensated for every 1 mph in the
+vehicle engine controller. Feel free to perform the same test, but change 1 mph to 180 mph and see how a small difference at 1 mph
+compounds into a large difference. (The larger the tire size delta, the worse the problem gets with speed.)
+
+    Lastly, is the "Engine RPM At Speed". This is a formula used to check engine rpm based on the axle gear ratio, tire diameter 
+size, vehicle speed, and a transmission ratio of 1:1. (This is 4th gear in a 5 or 6 speed transmission, typical of modern 
+vehicles and the gear that matters at a imagined top speed) This is an important formula to reference based on the mentioned 
+parameters because if a vehicle has to go a desired speed, engine rpm could be a limitation based on tire size and gearing. 
+For example, if a performance vehicle has to go 150 mph based on specific tire size/gearing and it is determined that 
+the engine will be turning 12000 rpm, this could be a potential issue depending on the engine because most engines cannot turn 
+12000 rpm.
+
+    To use the "Engine RPM At Speed" calculator, input the final drive axle ratio (Gear Ratio), input the tire diameter (Tire Size),
+and input the speed to be checked (Vehicle Speed). Once all fields have been filled, click submit. Once submit is clicked the 
+engine rpm at that speed and gearing will be presented to you.
+
+    In conclusion, these calculators are all used to get general starting points for data when designing a vehicle drivetrain. 
+Often times it is a combination of all three of these formulas that provide a solution. However, this is a showcase of the basics on 
+finding some of the needed calculations. It is my intention to use these examples as a reference/teaching tool for others. 
+
+That concludes my CS50 final project. I hope it was of interest to you!
+
+
+
+
+

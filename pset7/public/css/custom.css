@@ -1,0 +1,25 @@
+/**
+ * custom.css
+ *
+ * Computer Science 50
+ * Problem Set 7
+ *
+ * Custom CSS.
+ */
+
+.table-container
+{
+    display: inline-block;
+    width: auto;
+}
+
+th, td 
+{ 
+    padding: 15px;
+    text-align: center; 
+}
+
+ line a:hover 
+{
+    color: #777 !important;
+}

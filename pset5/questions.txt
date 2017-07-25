@@ -1,0 +1,36 @@
+0.  Pneumonoultramicroscopicsilicovolcanoconiosis is a word that is used to describe a lung disease 
+    that is otherwise known as silicosis. It is also the longest word in the English language.
+    
+1.  Getrusage returns the amount of computer hardware resources and time used for a called thread.
+
+2.  16 members.
+
+3.  It is best practice to do so. A actual value or pointer would both work, however, an actual value would force the
+    program to make a un-needed copy. Whereas, a pointer would be a more elegant approach that doesn't make an extra un-needed step.
+    This can save time.
+    
+4.  Main reads the words from a file by first setting a file pointer to the "text" file. Once the file pointer is set to the infile,
+    fgetc is used along with the file pointer to initialize the loops starting value. Next, the condition is set so that c does not 
+    equal EOF. Meaning that the for loop will run so long as c's char value is not the end of file indicator. Lastly, the iteration
+    portion of the loop has c being re-assigned by calling fgetc again, which in turn will get the next char value in the file. 
+    In summary, this loop will start at the beginning of the infile's first char and iterate char by char until the loop reaches 
+    the EOF indicator which means there is no more to be read. At this point the for loop is complete and the infile is read.
+    
+5.  There is a possibility that fscanf would pick up non-alphabetic characters and not account for them. When using fgetc only
+    chars will be read, anything else would be disregarded like ints.
+    
+6.  So that their values cannot be modified to cheat times.
+
+7.  I used a hash table structure that utilized the node data struct containing a char of fixed length + 1(null terminator).
+    The fixed length was based on the maximum length of a word in the dictionary (45 chars). The struct also contained a struct node
+    pointer to allow for list linking when collisions occurred.
+    
+8.  My code varied from .07 sec to .04 depending on the run. By the time I actually got my code working these were my values.
+
+9.  Again, by the time I actually got my code working the speed was already better then the staffs implementation.
+    If I have more time at the end of the course to go back and make some changes, I would like to try some different hash
+    functions to see if it could improve upon my code. My load time is by far the slowest part of my code.
+    
+10. The loading times were the slowest for me. In the future I would like to try different hashing functions like DJB2.
+    I originally tried to implement DJB2 but I had encountered some problems that I was having a hard time resolving so 
+    I decided to take another route.

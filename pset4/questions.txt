@@ -1,0 +1,44 @@
+0.  BMP's support up to 2^24 (16,777,216) colors, GIF's support 256 colors, 
+    JPEG's support up to 2^24 (16,777,216) colors, PNG's support 2^24 (16,777,216) colors, plus transparency.
+   
+1.  GIFs support animation.
+
+2.  Lossless and lossy compression are meant to indicate whether or not the original file that was
+    compressed can be recovered to its original form without a loss of data once it is uncompressed.
+        
+3.  JPEGs are lossy compressed.
+
+4.  The identifiers of the data are changed to signal that the target directory can be 
+    repurposed. The actual data is not removed.
+ 
+5.  I could re-write over the deleted files multiple times with random irrelevant data.
+
+6.   <stdint.h> is a C library that provides a set of typedefs that specify exact width 
+    integer types used for embedded programming.
+
+7.  Depending on the size of the value you are trying to represent, there is a data 
+    type that will allocate the memory needed to do so.
+    
+8.  A BYTE = 1 byte, DWORD = 4 bytes, LONG = 4 bytes, and a WORD is 2 bytes.
+  
+9.  The first two bytes of any BMP file have to be "0x42 0x4D" respectively.
+
+10. bfSize is the size in bytes of the bitmap file, whereas, biSize is the number of bytes required by the structure.
+ 
+11. When biHeight is negative, the bitmap is a top-down DIB and its origin is the upper-left corner, meaning it is not
+    written upside down.
+    
+12. biBitCount defines the bits per pixel and the maximum number of colors in the bitmap.
+
+13. If there is no output file to point to in memory it could return null. This could be the result of not having any
+    available memory or access to it.
+    
+14. fread()'s third argument is always 1 because it only takes one element of data in, the BITMAPINFOHEADER.
+
+15. The variable int padding will be assigned a value of 3.
+
+16. The function fseek is used to move the file pointer location to a new one.
+
+17. SEEK_CUR gives the current position of the file to the function fseek().
+
+18. Rob Bowden.

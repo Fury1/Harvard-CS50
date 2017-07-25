@@ -1,0 +1,31 @@
+/**
+ * custom.css
+ *
+ * Automotive Toolbox
+ *
+ * 
+ */
+
+/* overide bootstrap*/
+
+caption {
+  font-weight: bold;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #666666;
+}
+
+table 
+{
+    margin-left: 45px;
+    margin-right: 45px;
+}
+
+th, td 
+{ 
+    padding: 15px;
+    text-align: center;
+    
+}
+

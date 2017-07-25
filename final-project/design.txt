@@ -1,0 +1,55 @@
+Automotive Toolbox design.txt
+
+Chris Guarino
+
+CS50 Final Project 2015
+
+    For my CS50 final project I decided to implement three specialty calculations that I personally use on a regular basis. 
+I have built a number of custom cars for a variety of applications, in all cases; there is a large amount of planning and math 
+needed to make sure that things will work the way they are intended to for a purpose built build. For a implementation
+I decided to focus on gear ratios. Gear ratios can be one of the more frustrating things to plan out when building a truly
+custom drivetrain. The formulas I implemented are some of the techniques I use to get a baseline to start from.
+
+    I decided to go with a web based project because this is something I could add to in the future and possibly put on my 
+own website for others to use and benefit from. From my adventures with pset7 I decided that some of the templates and features
+would be a good start from a visual standpoint to implement my calculators. In addition, I chose to use the CS50 simulated 
+webserver since it provided a good platform to build a site offline and avoided purchasing a domain for the project.
+
+    As far as the page layout goes its very simple, my goal was to have one page with all the calculators that call their 
+respective php scripts without reloading the page. Since it is a simple page to begin with I thought it would be cumbersome 
+to reload the page every time a calculation was being made. 
+
+    When the user heads to the home page (index.php) render calls the calculations.php template as well as the header and footer 
+templates. Once calculations.php is rendered all the calculators are embedded in tables with their respective forms. 
+In each form I utilized preset drop down option lists to prevent the user from typing random values that wont work in the php 
+scripts. Additionally, many people are not aware of tire sizes let alone available axle gear ratios. I thought putting preset 
+values in place would add convenience to the form as well.  
+
+    One of the hurdles I had to overcome was writing some jquery in scripts.js to call the proper php script and return the formula 
+result in place of the default value next to each submit button. This was an important step because it would otherwise mean 
+reloading the page, which is something that I did not want to do.
+
+    Once I was able to call the proper script with the valid selected inputs it was time to write the scripts that error checked 
+for "null" values and only ran the formula once all fields had been given data. The scripts rpm.php and mphcorrect.php were very 
+straight forward. I personally know the formulas used to calculate the desired values.
+However, one issue I ran into with gearratio.php (The script used to calculate a new axle gear ratio) was that is was returning
+an exact gear ratio value. The problem with an exact value is that it's to correct for the real world. Axle gear ratios are only
+made in specific ratios. (It's physically impossible to cut certain ratios based on the gears geometry, and physically impossible
+to fit certain gear ratios in axle housings.) So, a program that returns a ratio that you can't buy is pretty useless. When I do 
+this myself I normally round to the closest ratio, once I realized that I decided to make a function that does the same. 
+The solution was to hardcode all of the available ratios in an array and write a function that rounded to the nearest ratio in 
+the array and present that array value to the user instead of the exact ratio number.
+
+    Once I was able to get the webpage functioning as desired I decided to style it via bootstrap css and a few custom css 
+override properties so it had a nice visual user interface and fit the page without scrolling. I always like using web pages
+that are visually clean and user friendly. It was my goal to style the page as such. 
+
+    In conclusion, these calculators are all used by me as well as others to get an idea of where a custom vehicle drivetrain stands
+in the real world. Often times it is a combination of many things to yield the end result. However, this is a showcase of the most 
+basic vehicle drivetrain calculations that I hope to build upon in the future possibly. It is my intention to use them 
+as a reference/teaching tool for others as well. 
+
+That concludes my CS50 final project.
+
+
+
